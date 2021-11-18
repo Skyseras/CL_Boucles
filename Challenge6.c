@@ -9,6 +9,7 @@ n étant le nombre entré par l’utilisateur (ligne 9). Et, à chaque fois
 on fait un test de primalité sur p (lignes 11-15), s'il s’avère qu’il est 
 premier on l'affiche sur le champ.
 */
+
 int is_pr(int nb){
     int div=0;
     int nb2=nb;
@@ -29,7 +30,7 @@ int is_pr(int nb){
 }
 int main(){
     int m;
-    printf("Entrez la limite des nombre souhaite avoir les premiers : ");
+    printf("Entrez le plafond des nombres premiers que vous souhaitez savoir: ");
     scanf("%d",&m);
     for (int p=2 ; p<=m ; p++) {
         if (is_pr(p)) {

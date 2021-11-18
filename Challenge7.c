@@ -8,13 +8,19 @@ définie comme suit: Un=Un-1+Un-2 où U1=U0=1.
 */
 
 int main(){
-    int a;
-    int f0=0;
-    int f1=1;
-    int nieme;
-    printf("Entrez le N : ");
-    scanf("%d",a);
-    while (nieme)
-    nieme=+F a-2
+    int n;
+    int c_2=0; // la case avant deux fois
+    int c_1=1; // la case avant une fois
+    int c;
+    int compt=0;
+    printf("Entrez n : ");
+    scanf("%d",&n);
+    while (compt != n){
+        c=c_1+c_2;
+        c_2=c_1;
+        c_1=c; 
+        compt++;
+    }
+    printf("%d \n",c_2);
 return 0;
 }
