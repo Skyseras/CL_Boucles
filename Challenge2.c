@@ -51,6 +51,7 @@ int main(){
             printf("*");
             li++;
         }
+        
         li = 1;
         printf("\n");
         t++;
