@@ -8,20 +8,20 @@ le nombre des lignes à composer est demandé à l’utilisateur.
 (chaque ligne doit avoir un nombre premier d'étoiles
 */
 
-int is_pr(int nbtest){
+int is_pr(int nbt){ // nombre test
     int ndiv=0;
-    int nbnext=nbtest;
+    int nb=nbt; // nombre = nombre test
     // exclude 0 and 1
-    if(nbtest==0 || nbtest==1)
+    if(nbt==0 || nbt==1)
         return -1;
     // find prime numbers
-    while (nbnext)
+    while (nb)
     {
-        if (nbtest%nbnext==0)
+        if (nbt%nb==0)
             ndiv++;
-        nbnext--;
+        nb--;
     }
-    if (div!=2)
+    if (ndiv!=2)
         return 0;
     else
         return 1;
@@ -30,7 +30,7 @@ int is_pr(int nbtest){
 int nth_pr(int nbs){
     int compt=0;
     // number of base
-    int n=2;
+    int n=3;
     while (n){
         if (is_pr(n))
             compt++;
@@ -41,19 +41,42 @@ int nth_pr(int nbs){
 
 }
 int main(){
-    int Lines;
-    int li;
-    int t;
+    // code of stars
+    int lines;
+    int li=1;
+    int t=1;
     printf("Entrez le nombre de lignes : ");
-    scanf("%d", Lines);
+    scanf("%d", &lines);
 
-    while (li <= nth_prime(t)){
-            printf("*");
-            li++;
+    // code of spaces
+    int k = 0;
+    int sp;
+    int foo;
+    
+    while (li<=lines){
+        sp = (nth_pr(lines) - nth_pr(li)) / 2;    
+        while (k < sp){
+            printf(" ");
+            k++;
         }
-        
-        li = 1;
+        k = 0;
+
+        while (t <= nth_pr(li)){
+            printf("*");
+            t++;
+        }
+        t = 1;
         printf("\n");
-        t++;
+        li++;
+
+
+
+
+        
+
+        
+
+
+    }
     return 0;
 }
