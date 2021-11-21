@@ -8,6 +8,9 @@ le nombre des lignes à composer est demandé à l’utilisateur.
 (chaque ligne doit avoir un nombre premier d'étoiles
 */
 
+
+//Function : prime or not
+
 int is_pr(int nbt){ // nombre test
     int ndiv=0;
     int nb=nbt; // nombre = nombre test
@@ -26,6 +29,8 @@ int is_pr(int nbt){ // nombre test
     else
         return 1;
 }
+
+// function : gathering of prime numbers
 
 int nth_pr(int nbs){
     int compt=0;
@@ -47,20 +52,16 @@ int main(){
     int t=1;
     printf("Entrez le nombre de lignes : ");
     scanf("%d", &lines);
-
-    // code of spaces
-    int k = 0;
-    int sp;
-    int foo;
-    
+        // code of spaces to make a piramyd
+        int i = 0;
+        int space;   
     while (li<=lines){
-        sp = (nth_pr(lines) - nth_pr(li)) / 2;    
-        while (k < sp){
+        space = (nth_pr(lines) - nth_pr(li)) / 2;    
+        while (i < space){
             printf(" ");
-            k++;
+            i++;
         }
-        k = 0;
-
+        i = 0;
         while (t <= nth_pr(li)){
             printf("*");
             t++;
@@ -68,15 +69,6 @@ int main(){
         t = 1;
         printf("\n");
         li++;
-
-
-
-
-        
-
-        
-
-
     }
     return 0;
 }
